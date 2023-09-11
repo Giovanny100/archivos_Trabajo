@@ -18,7 +18,7 @@ print(f' Tus gastos son de: ${gastos_mes} al mes')
 
 print(f' Tu restante mensual es: ${10000 - gastos_mes}')
 
-print(f'A fin de mes mes tendra libres para pago: $ { 9000 + 10000 - gastos_mes }')
+print(f'A fin de mes tendra libres para pago: $ { 9000 + 10000 - gastos_mes }')
 
 #! Comprometerme a que cada cantida que salga de la TDC BBVA sea remplzada con dinero de tocar
 #! Por lo tanto tengo que conseguir minimo al mes $1000 tocando ($250 a la semana) para liberar por lo menos los gastos de la gata.
