@@ -1,0 +1,31 @@
+{
+    "operaciones_unitarias": [
+      {
+        "nombre": "Destilación",
+        "caracteristicas": {
+          "termodinamica": "Basada en la diferencia de volatilidades de los componentes de la mezcla. Utiliza el cambio de fase para separar líquidos.",
+          "diseño": "Torres de destilación con bandejas o relleno. Variables clave: número de bandejas, relación de reflujo.",
+          "hidraulica": "Flujo descendente del líquido en las bandejas. Vapor sube a contracorriente.",
+          "transferencia_de_calor": "Intercambio de calor en el condensador y el rehervidor."
+        }
+      },
+      {
+        "nombre": "Extracción Líquido-Líquido",
+        "caracteristicas": {
+          "termodinamica": "Basada en la distribución de un soluto entre dos fases inmiscibles. Separa componentes de una mezcla líquida.",
+          "diseño": "Columnas de extracción con separadores. Selección de solventes clave.",
+          "hidraulica": "Flujo ascendente del solvente. Mezcla entra lateralmente y se separa en fases.",
+          "transferencia_de_calor": "Enfriamiento o calentamiento para ajustar la solubilidad."
+        }
+      },
+      {
+        "nombre": "Reactor Químico",
+        "caracteristicas": {
+          "termodinamica": "Basado en las reacciones químicas entre los reactivos. Control de la cinética y el equilibrio químico.",
+          "diseño": "Reactores de tanque agitado (CSTR) o de flujo pistón (PFR). Selección de catalizadores.",
+          "hidraulica": "Circulación de reactores de flujo continuo. Agitación en reactores de tanque.",
+          "transferencia_de_calor": "Control de la temperatura para ajustar la velocidad de la reacción."
+        }
+      }
+    ]
+  }

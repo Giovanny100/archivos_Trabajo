@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import math as m
 import seaborn as sns
 
-acciones = pd.read_csv("C:/Users/mar_amez/Downloads/TSLA (1).csv")
+acciones = pd.read_csv("C:/Users/mar_amez/Downloads/TSLA.csv")
 
 # print(acciones) #Genera el dataframe de los datos importados de yahoo
 
@@ -48,7 +48,7 @@ desviacion_estandar = diferencias.std()
 print(f'La media de la accion es de  {media} y su desviacion estandar es {desviacion_estandar}')
 
 # Ahora podemos hacer un muestreo de los datos para sacar estadisticas con diferentes datos:
-#Todos son datos distintos debido a que se esta usando la funcion random.
+# son datos distintos debido a que se esta usando la funcion random.
 mod1 = np.random.normal(media, desviacion_estandar,250)
 mod2 = np.random.normal(media, desviacion_estandar,250)
 mod3 = np.random.normal(media, desviacion_estandar,250)

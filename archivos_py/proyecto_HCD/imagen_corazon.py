@@ -12,6 +12,7 @@ def cargar_imagen():
         etiqueta_imagen.config(image=foto)
         etiqueta_imagen.image = foto
 
+
 # Crear la ventana principal
 ventana = tk.Tk()
 ventana.title("Visor de Imágenes")

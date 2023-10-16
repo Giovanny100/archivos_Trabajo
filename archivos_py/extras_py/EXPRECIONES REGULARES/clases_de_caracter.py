@@ -3,20 +3,20 @@ LAS CLASES_DE_CARACTER OFRECEN UNA MANERA DE COINCIDIR CON SOLO UNO DE UN CONJUN
 SE CREAN COLOCANDO LOS CARACTERES QUE COINCIDEN DENTRO DE LOS CORCHETES.
 '''
 
-import re
+# import re
 
-pattern = r"[aeiou]"
+# pattern = r"[aeiou]"
 
-if re.search(pattern,"gray"):
-    print("Match 1")
+# if re.search(pattern,"gray"):
+#     print("Match 1")
 
-if re.search(pattern,"qwertyuiop"):
-    print("Match 2")
+# if re.search(pattern,"qwertyuiop"):
+#     print("Match 2")
 
-if re.search(pattern,"rhythm myths"):
-    print("Match 3")
+# if re.search(pattern,"rhythm myths"):
+#     print("Match 3")
 
-#EL CODIGO ANTERIOR HACE MATCH CON 1 Y 2 PORQUE APARECEN LETRAS DEL CONJUNTO DADO 
+#EL CODIGO ANTERIOR HACE MATCH CON 1 Y 2 PORQUE APARECEN LETRAS DEL CONJUNTO DADO
 
 '''
 LAS CLASES DE CARACTER PUEDEN TAMBIEN COINCIDIR CON RANGOS DE CARACTERES.
@@ -29,6 +29,7 @@ VARIOS RANGOS PUEDEN SER INCLUIDOS EN UNA CLASE. POR EJEMPLO, [A-Za-Z] COINCIDE 
 
 import re
 pattern = r"[A-Z][A-Z][0-9]"
+print(pattern)
 
 if re.search(pattern, "LS8"):
     print("Match 1")
@@ -49,15 +50,15 @@ OTROS METACARACTERES TALES COMO $ Y . NO TIENEN NINGUN SIGNIFICADO DENTRO DE LAS
 EL METACARACTER ^ NO TIENE SIGNIFICADO A MENOS QUE SEA EL PRIMER METACARACTER DE UNA CLASE.
 '''
 
-pattern = r"[^A-Z]"
+# pattern = r"[^A-Z]"
 
-if re.search(pattern, "this is all quiet"):
-    print("Match 1")
+# if re.search(pattern, "this is all quiet"):
+#     print("Match 1")
 
-if re.search(pattern, "AbCdEfG123"):
-    print("Match 2")
+# if re.search(pattern, "AbCdEfG123"):
+#     print("Match 2")
 
-if re.search(pattern, "THISISALLSHOUTING"):
-    print("Match 3")
+# if re.search(pattern, "THISISALLSHOUTING"):
+#     print("Match 3")
 
-#EL CODIGO ANTERIOR SOLO NO COINCIDE CON EL ULTIMO PORQUE TIENE PURAS MAYUSCULAS.
+# #EL CODIGO ANTERIOR SOLO NO COINCIDE CON EL ULTIMO PORQUE TIENE PURAS MAYUSCULAS.
