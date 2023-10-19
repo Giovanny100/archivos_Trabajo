@@ -7,8 +7,18 @@
 
 import pandas as pd
 
-df = pd.DataFrame('C:/Users/mar_amez/Desktop/gio/archivos_py/librerias/pandas/archivos_csv/tesla.csv')
+arch = pd.read_csv('C:/Users/mar_amez/Desktop/gio/archivos_py/librerias/pandas/archivos_csv/tesla.csv')
 
-print(df)
+pd.options.display.max_rows = 250
 
+df = pd.DataFrame(arch)
+
+# print(df)
+
+# print(df.duplicated()) #* Devuelve una matriz booleana de las filas repetidas con True
+
+#' Eliminar todos los datos duplicados:
+
+df.drop_duplicates(inplace = True) #* Elimina los datos repetidos (elimino 16 y 17)
 print(df.duplicated())
+

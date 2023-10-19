@@ -3,12 +3,11 @@
 
 def change_charter(input_text):
     # Reemplaza todas las instancias de "?" con "!"
-    modified_text = input_text.replace("\n", "#'")
+    modified_text = input_text.replace("#", "#*")
     return modified_text
 
 if __name__ == "__main__":
     input_text = """
-
 
 """
 

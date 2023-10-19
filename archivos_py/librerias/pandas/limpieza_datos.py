@@ -34,7 +34,7 @@ df = pd.read_csv('C:/Users/mar_amez/Desktop/gio/archivos_py/mi_archivo.csv')
 #'Otra forma de tratar con celdas vacias es insertar un nuevo valor
 #' El metodo fillna permite remplazar las celdas vacias con un nuevo valor
 
-# df.fillna(130, inplace = True) #* Sustituye celdas vacioas con valor 130
+# df.fillna(130, inplace = True) #* Sustituye celdas vacias con valor 130
 
 # print(df.to_string())
 
