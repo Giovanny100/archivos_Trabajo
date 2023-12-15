@@ -115,7 +115,7 @@ desc = describe(v)
 
 from scipy.stats import skew, kurtosis
 
-print(skew(v))
+print(skew(v)) #* El valor representa
 print(kurtosis(v))
 
 #c Averiguar si los datos de una matriz vienen de una distribucion normal:

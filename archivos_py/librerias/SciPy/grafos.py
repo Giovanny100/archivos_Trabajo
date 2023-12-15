@@ -162,5 +162,5 @@ h = np.array([
   [0, 1, 0, 1]
 ])
 
-# newh = csr_matrix(h)
-# print(breadth_first_order(newh, 1)) #* Devuelve tupla de orden de nodos recorridos y predecesores de recorrido
+newh = csr_matrix(h)
+print(breadth_first_order(newh, 1)) #* Devuelve tupla de orden de nodos recorridos y predecesores de recorrido
