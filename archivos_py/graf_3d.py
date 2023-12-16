@@ -11,9 +11,9 @@ z = 2 * x + 3 * y  # Ecuación del plano
 
 # Puntos de dispersión aleatorios para agregar
 num_puntos = 200
-x_dispersion = np.random.uniform(-5, 5, num_puntos)
-y_dispersion = np.random.uniform(-5, 5, num_puntos)
-z_dispersion = 2 * x_dispersion + 3 * y_dispersion + np.random.normal(0, 1, num_puntos)  # Agregar algo de variabilidad
+x_dispersion = np.random.uniform(-7, 7, num_puntos)
+y_dispersion = np.random.uniform(-7, 7, num_puntos)
+z_dispersion = 2 * x_dispersion + 3 * y_dispersion + np.random.normal(0, 10, num_puntos)  # Agregar algo de variabilidad
 
 # Crear la figura y los ejes tridimensionales
 fig = plt.figure(figsize=(10, 8))
@@ -23,7 +23,7 @@ ax = fig.add_subplot(111, projection='3d')
 ax.set_facecolor('#121212')  # Color de fondo oscuro
 
 # Crear un gradiente de color en el plano
-cmap = LinearSegmentedColormap.from_list('gradiente', ['#FFFFFF', '#9575cd'], N=len(z))
+cmap = LinearSegmentedColormap.from_list('gradiente', ['#FFFFFF', '#9575cb'], N=len(z))
 surf = ax.plot_surface(x, y, z, cmap=cmap, rstride=100, cstride=100, linewidth=0.5, antialiased=True, shade=True)
 
 # Añadir contornos
@@ -43,7 +43,7 @@ ax.set_zlabel('X3:Ejercicio', fontsize=12, color='white')
 ax.set_title('Plano Tridimensional con Puntos de Dispersión', fontsize=14, color='white')
 
 # Ajustes de estilo
-ax.grid(False)
+ax.grid(True)
 ax.xaxis.pane.fill = False
 ax.yaxis.pane.fill = False
 ax.zaxis.pane.fill = False
@@ -60,4 +60,3 @@ ax.view_init(elev=20, azim=-45)
 
 # Mostrar el gráfico
 plt.show()
-
