@@ -9,19 +9,19 @@
 
 
 # ! Los gastos estan divididos en:
-# ! Deuda coopel = $3120
+# ! Deuda coopel = $2500
 # ! Deuda BBVA = $650
 # ! Deuda traje = $610
 # ! Terapias Mariana = $600
 # ! Comida misty = $320
 # ! Arena misty = $420
-# ! Pasajes (mes) = $720
+# ! Pasajes (mes) = $750
 # ! Pago izzi = $300
-# ! Despensa (mes) = $1000
-# ! Ahorro (mes) = $650
+# ! Despensa (mes) = $500
+# ! Ahorro (mes) = $300
 # ! Celular (mes) = $ 800
 
-gastos_mes = 3120+650+610+600+320+420+720+300+1000+650+800
+gastos_mes = 2500+(2*650)+610+600+320+300+750+300+500+300+800
 
 print(f' Tus gastos son de: ${gastos_mes} al mes')
 
