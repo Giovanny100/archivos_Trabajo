@@ -41,7 +41,7 @@ edades_mujeres = np.random.normal(media, desviacion_estandar, 1000)
 
 # Genera arrays de género (0 para hombres, 1 para mujeres)
 genero_hombres = np.zeros(1000)
-genero_mujeres = np.ones(1000) data gfvb
+genero_mujeres = np.ones(1000)
 
 # Combina los arrays de edades y género
 edades = np.concatenate([edades_hombres, edades_mujeres])
@@ -59,6 +59,6 @@ plt.title('Gráfico de Dispersión de Edad por Género')
 plt.legend()
 
 # Muestra el gráfico
-plt.show()
+
 
 
