@@ -1,35 +1,31 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Definir la función para una línea recta
-def linea_recta(x):
-    # Ajustar la pendiente (m) y la intersección (b) según tus preferencias
-    m = 2
-    b = 1
-    return m * x + b
+# Definir la función ReLU
+def relu(x):
+    return np.maximum(0, x)
 
-# Generar datos x de -5 a 5 con paso de 0.1
-x = np.arange(-5, 5, 0.1)
+# Generar datos x de -7 a 7 con paso de 0.1
+x = np.arange(-7, 7, 0.1)
 
-# Calcular los valores de la línea recta para cada x
-y = linea_recta(x)
+# Calcular los valores de la función ReLU para cada x
+y = relu(x)
 
 # Estilo y colores más elegantes
 plt.style.use('seaborn-dark-palette')
-color = 'violet'
+color = 'springgreen'
 
-# Graficar la línea recta con la intersección en el eje de las ordenadas
-plt.figure(figsize=(10, 6))
-plt.plot(x, y, label='Línea Recta', color=color, linewidth=3)
-plt.scatter(0, linea_recta(0), color='red', label='Intersección en Y', s=100)  # Punto de intersección
-plt.title('Línea Recta', fontsize=18, fontweight='bold', color='darkblue')
-plt.xlabel('X', fontsize=14, fontweight='bold', color='darkblue')
-plt.ylabel('Y', fontsize=14, fontweight='bold', color='darkblue')
-plt.axhline(0, color='black', linewidth=2, label='Eje Y')  # Eje Y en negro y etiqueta
-plt.axvline(0, color='black', linewidth=2, label='Eje X')  # Eje X en negro y etiqueta
+# Graficar la función ReLU
+plt.figure(figsize=(8, 5))
+plt.plot(x, y, label='ReLU', color=color, linewidth=14)
+plt.title('ReLU', fontsize=16, fontweight='bold', color='orange')
+plt.xlabel('X', fontsize=12, fontweight='bold', color='navy')
+plt.ylabel('Y', fontsize=12, fontweight='bold', color='navy')
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
 plt.grid(color='gray', linestyle='--', linewidth=0.5)
 plt.legend(loc='upper left', fontsize=12, frameon=True, facecolor='white', edgecolor='black')
-plt.xticks(fontsize=12, color='darkblue')
-plt.yticks(fontsize=12, color='darkblue')
+plt.xticks(fontsize=10, color='navy')
+plt.yticks(fontsize=10, color='navy')
 plt.tight_layout()
 plt.show()
