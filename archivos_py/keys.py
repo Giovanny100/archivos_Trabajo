@@ -1,6 +1,8 @@
 from cryptography.fernet import Fernet
 import os
 
+from sklearn.model_selection import KFold
+
 def generar_clave():
     return Fernet.generate_key()
 

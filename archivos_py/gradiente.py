@@ -1,78 +1,47 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+from scipy.signal import argrelextrema
 
-# Definimos una función más compleja y colorida
-def funcion_ejemplo(x, y):
-    return np.sin(np.sqrt(x**2 + y**2)) * np.cos(x) * np.cos(y)
+# Definir una combinación de funciones trigonométricas
+def f(x):
+    return np.sin(x) + 0.5*np.sin(2*x) + 0.2*np.sin(3*x) + 0.1*np.sin(5*x)
 
-# Derivadas parciales de la función respecto a x e y
-def derivada_parcial_x(x, y):
-    r = np.sqrt(x**2 + y**2)
-    return np.cos(r) * np.cos(x) * np.cos(y) - (x * np.sin(r) * np.cos(x) * np.cos(y)) / r
+# Calcular la derivada de la función
+def df(x):
+    return np.cos(x) + np.cos(2*x) + 0.6*np.cos(3*x) + 0.5*np.cos(5*x)
 
-def derivada_parcial_y(x, y):
-    r = np.sqrt(x**2 + y**2)
-    return np.cos(r) * np.cos(x) * np.cos(y) - (y * np.sin(r) * np.cos(x) * np.cos(y)) / r
+# Generar datos para el gráfico
+x = np.linspace(-2*np.pi, 2*np.pi, 1000)
+y = f(x)
 
-# Descenso del gradiente
-def descenso_gradiente(learning_rate, num_iteraciones):
-    # Punto de inicio
-    punto_inicial = np.array([4.0, 4.0])
+# Encontrar máximos y mínimos locales
+local_maxima_indices = argrelextrema(y, np.greater)[0]
+local_minima_indices = argrelextrema(y, np.less)[0]
 
-    # Listas para almacenar los valores de x, y y la función en cada iteración
-    x_vals = []
-    y_vals = []
-    z_vals = []
+# Configurar el estilo oscuro
+plt.style.use('dark_background')
 
-    for _ in range(num_iteraciones):
-        x_vals.append(punto_inicial[0])
-        y_vals.append(punto_inicial[1])
-        z_vals.append(funcion_ejemplo(punto_inicial[0], punto_inicial[1]))
+# Graficar la función
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, label='Combinación de Funciones Seno', color='cyan', linewidth=3)
 
-        # Actualizamos el punto usando el descenso del gradiente
-        punto_inicial[0] -= learning_rate * derivada_parcial_x(punto_inicial[0], punto_inicial[1])
-        punto_inicial[1] -= learning_rate * derivada_parcial_y(punto_inicial[0], punto_inicial[1])
+# Resaltar puntos de máximos y mínimos por encima del gráfico
+plt.scatter(x[local_maxima_indices], y[local_maxima_indices], color='red', marker='o', label='Máximos Locales', zorder=5)
+plt.scatter(x[local_minima_indices], y[local_minima_indices], color='blue', marker='o', label='Mínimos Locales', zorder=5)
 
-    return x_vals, y_vals, z_vals
+# Agregar líneas tangentes para mostrar la pendiente en cada punto
+for i in local_maxima_indices:
+    tangent_line = lambda xx: f(x[i]) + df(x[i]) * (xx - x[i])
+    plt.plot(x[i:i+50], tangent_line(x[i:i+50]), color='red', linestyle='--')
 
-# Parámetros del descenso del gradiente
-learning_rate = 0.1
-num_iteraciones = 50
+for i in local_minima_indices:
+    tangent_line = lambda xx: f(x[i]) + df(x[i]) * (xx - x[i])
+    plt.plot(x[i:i+50], tangent_line(x[i:i+50]), color='blue', linestyle='--')
 
-# Obtener valores para graficar
-x_vals, y_vals, z_vals = descenso_gradiente(learning_rate, num_iteraciones)
-
-# Crear una figura 3D con fondo oscuro
-fig = plt.figure(figsize=(8, 6), facecolor='black')
-ax = fig.add_subplot(111, projection='3d', facecolor='black')
-
-# Graficar la función de ejemplo con colores morados
-x = np.linspace(-5, 5, 100)
-y = np.linspace(-5, 5, 100)
-x, y = np.meshgrid(x, y)
-z = funcion_ejemplo(x, y)
-surf = ax.plot_surface(x, y, z, alpha=0.7, cmap='Purples')  # Cambio de color a tonos morados
-
-# Resaltar el grillado con líneas blancas
-ax.w_xaxis.set_pane_color((0, 0, 0, 1))
-ax.w_yaxis.set_pane_color((0, 0, 0, 1))
-ax.w_zaxis.set_pane_color((0, 0, 0, 1))
-
-# Graficar el descenso del gradiente con un color violeta vibrante y vectores
-ax.quiver(x_vals[:-1], y_vals[:-1], z_vals[:-1], np.diff(x_vals), np.diff(y_vals), np.diff(z_vals), color='violet', length=0.1, normalize=True, label='Descenso del Gradiente')
-
-# Configuraciones adicionales
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Función')
-ax.legend()
-
-# Configurar colores de fondo y cuadrícula
-ax.xaxis.pane.fill = True
-ax.yaxis.pane.fill = True
-ax.zaxis.pane.fill = True
-ax.grid(True)
-
-# Mostrar la gráfica
+# Configurar la leyenda y mostrar el gráfico
+plt.legend()
+plt.title('Combinación de Funciones Seno con Múltiples Curvas y Tangentes en Máximos y Mínimos Locales')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.grid(True)
 plt.show()
