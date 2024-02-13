@@ -4,8 +4,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# x= np.array([0,6])
-# y = np.array([0,256])
+x= np.array([0,6])
+y = np.array([0,256])
 
 #' Por defecto se traza una linea recta que es el vector del P1 a P2:
 
@@ -24,6 +24,6 @@ import numpy as np
 # x = np.array([1,2,6,8])
 # y = np.array([3,8,1,10])
 
-# plt.plot(x, y)
-# plt.show()
+plt.plot(x, y)
+plt.show()
 

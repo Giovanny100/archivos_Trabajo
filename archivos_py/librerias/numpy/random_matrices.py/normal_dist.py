@@ -30,6 +30,6 @@ import seaborn as sns
 
 #? random.normal(size=1000): Genera una muestra de 1000 números aleatorios de una distribución normal (gaussiana)
 #? estándar, es decir, con una media de 0 y una desviación estándar de 1.
-sns.distplot(random.normal(size=1000), hist=False) #*Distribucion normal
+sns.displot(random.normal(size=1000), hist=False) #*Distribucion normal
 
 plt.show()
