@@ -17,9 +17,9 @@ def mostrar_matriz(matriz):
 
 #* Definir las dimensiones de la matriz
 
-nivelesA = 3
-tratamientos = 4
-nivelesB = 3
+nivelesA = 2
+tratamientos = 5
+nivelesB = 4
 
 #* Llenar la matriz con las entradas proporcionadas
 
@@ -28,7 +28,7 @@ mostrar_matriz(matriz)
 
 #* Luego de generar la matriz, guardarla en un archivo utilizando np.save:
 
-np.save("matriz741.npy", matriz)
+np.save("matriz743.npy", matriz)
 
 #*  Obtener el número de filas, columnas y dimensiones:
 

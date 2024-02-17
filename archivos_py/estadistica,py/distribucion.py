@@ -5,28 +5,17 @@ import numpy as np
 
 #' Generar datos aleatorios con una distribución normal:
 
-datos = np.random.normal(loc=0, scale=1, size=1000)
+datos = np.load('C:/Users/mar_amez/Desktop/gio/archivos_py/matrices/matriz743.npy')
 
 #' Crear histograma:
 
 plt.figure(figsize=(10, 5))
-sns.histplot(datos, kde=True, color='skyblue', bins=30)
+plt.hist(datos, bins=30, color='blue', alpha=0.7, density=True) # Modificar los parámetros según tus necesidades
 plt.title('Histograma de datos')
 plt.xlabel('Valores')
-plt.ylabel('Frecuencia')
+plt.ylabel('Densidad')
 plt.show()
 
-# #' Crear gráfico de probabilidad normal (QQ plot):
-
-# plt.figure(figsize=(8, 8))
-# norm_values = np.random.normal(loc=np.mean(datos), scale=np.std(datos), size=len(datos))
-# sns.scatterplot(np.sort(norm_values), np.sort(datos), color='blue', label='Datos')
-# sns.lineplot(norm.ppf([0.01, 0.99]), norm.ppf([0.01, 0.99]), color='red', label='Recta de referencia')
-# plt.title('Gráfico de Probabilidad Normal (QQ plot)')
-# plt.xlabel('Cuantiles teóricos')
-# plt.ylabel('Cuantiles observados')
-# plt.legend()
-# plt.show()
 
 # #' Realizar prueba de normalidad de Shapiro-Wilk
 
